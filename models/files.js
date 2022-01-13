@@ -1,8 +1,7 @@
 const mongoose = require('mongoose')
 const { Schema } = mongoose;
 
-const UserSchema = new Schema({
-
+const FilesSchema = new Schema({
     email: {
         type: String,
         required: true,
@@ -12,16 +11,15 @@ const UserSchema = new Schema({
         type: String,
         required: true,
     },
-    password: {
+    files: {
         type: String,
         required: true
     },
-    role:{
-        type:String,
-        default:"user",
-        required:false
+    OriginalFileName: {
+        type: String,
+        required: true
     }
 
 }, { timestamps: true });
 
-module.exports = mongoose.model('user', UserSchema)
+module.exports = mongoose.model('fiels', FilesSchema)
